@@ -64,7 +64,7 @@ The following is the JSON payload for this POST REST API:
 ## Example Usage
  
 ## A simple Syncronous Echo Bot exposed over Facebook Messenger channel
-
+''''swift
     //1. Instanciate KituraBot and implement BOT logic
     let bot = KituraBot(router: router) { (channelName: String, senderId: String, message: String) -> String? in
         
@@ -138,3 +138,4 @@ The following is the JSON payload for this POST REST API:
         Log.error("Oops... something wrong on Bot Channel name")
     }
 
+''''
