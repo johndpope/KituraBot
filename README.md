@@ -19,7 +19,7 @@ See the KituraBotFrontendEchoSample project for how to implement a simple Echo B
 
  
 ## API for the Kitura Bot implementation
-
+````swift
     /// Initialize a `KituraBot` instance.
     /// - Parameter router: Passed Kitura Router (to add GET and POST REST API for the webhook URI path of the plugged in channels).
     public init(router: Router, botMessageNotificationHandler: @escaping (SyncNotificationHandler))
@@ -40,7 +40,7 @@ See the KituraBotFrontendEchoSample project for how to implement a simple Echo B
     /// It allows to send back the message on the original channel or to eventually change channel and even message
     public typealias PushNotificationHandler = (_ channelName: String, _ senderId: String, _ message: String) -> (channelName: String, message: String)?
     
-
+````
  
 ## REST API for the Async backend Bot implementation (aka OpenWhisk)
 
@@ -64,7 +64,7 @@ The following is the JSON payload for this POST REST API:
 ## Example Usage
  
 ## A simple Syncronous Echo Bot exposed over Facebook Messenger channel
-''''swift
+````swift
     //1. Instanciate KituraBot and implement BOT logic
     let bot = KituraBot(router: router) { (channelName: String, senderId: String, message: String) -> String? in
         
@@ -137,5 +137,4 @@ The following is the JSON payload for this POST REST API:
     } catch is KituraBotError {
         Log.error("Oops... something wrong on Bot Channel name")
     }
-
-''''
+````
